@@ -8,9 +8,8 @@ var version = "1.0";
 
 function onAttach(tabId) {
   if (chrome.runtime.lastError) {
-    // console.log(".");
-    // var notification = webkitNotifications.createNotification('Hello!', chrome.runtime.lastError.message);
+    console.log(chrome.runtime.lastError.message);
     return;
   }
-  chrome.windows.create({url: "headers.html?" + tabId, type: "popup", width: 150, height: 500});
+  chrome.windows.create({url: "index.html?" + tabId, type: "popup", width: 150, height: 500});
 }
